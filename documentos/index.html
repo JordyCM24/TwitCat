@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="./dark.css">
+    <link rel="stylesheet" media="(prefers-color-scheme: light)" href="./light.css">
+    <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./src/cat.png">
+    <title>TwitCat</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2 col-sm-2 col-lg-2 container-menu">
+                <div class="menu">
+                    <div class="options-cat">
+                        <div class="d-flex">
+                            <h5 class="fw-bold">TwitCat</h5>
+                            <img class="option-cat" style="width: 20px; height: 25px;" src="/src/cat.png" alt="TwitCat">
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="options-inicio">
+                            <img class="option img-fluid" src="./src/house-door-fill.svg" alt="Inicio">
+                            <span class="fw-bold">Inicio</span>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="options-explorar">
+                            <img class="img-fluid option" src="./src/search.svg" alt="Explorar">
+                            <span>Explorar</span>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="options-notificaciones">
+                            <img class="option img-fluid" src="./src/bell.svg" alt="Notificaciones">
+                            <span>Notificaciones</span>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="options-mensaje">
+                            <img class="option img-fluid" src="./src/envelope.svg" alt="Mensaje">
+                            <span>Mensajes</span>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="options-listas">
+                            <img class="option img-fluid" src="./src/card-list.svg" alt="Listas">
+                            <span>Listas</span>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="options-guardado">
+                            <img class="option img-fluid" src="./src/save2.svg" alt="Guardado">
+                            <span>Guardado</span>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="options-verificado">
+                            <img class="option img-fluid" src="./src/patch-check.svg" alt="Verificado">
+                            <span>Verificado</span>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="options-perfil">
+                            <img class="option img-fluid" src="./src/person.svg" alt="Perfil">
+                            <span>Perfil</span>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="options-masOpciones">
+                            <img class="option img-fluid" src="./src/three-dots.svg" alt="Mas Opciones">
+                            <span>Más Opciones</span>
+                        </div>
+                    </div>
+                    <dark-mode-toggle
+                    id="dark-mode-toggle-1"
+                    legend="Tema:"
+                    appearance="toggle" 
+                    dark="Dark"
+                    light="Light"
+                    ></dark-mode-toggle>
+                    
+                </div>
+            </div>
+
+            <div class="col-10 col-sm-10 col-lg-6 container-feed">
+                <div class=" feed">
+                    <div class="row">
+                        <p class="fw-bold">INICIO</p>
+                        <div class="col d-flex justify-content-center align-items-center feed-inicio">
+                            <p>Para ti</p>
+                        </div>
+                        <div class="col d-flex justify-content-center feed-inicio">
+                            <p>Siguiendo</p>
+                        </div>
+                    </div>
+                    <!-- Que estas pensando ?-->
+                    <div class="row post">
+                        <div class="col-2">
+                            <img class="img-fluid img-user mt-2" style="border-radius: 50px;" src="https://lh3.googleusercontent.com/a/AAcHTteHSgEl6wH6UoOZ1CaCQI64Brn9PopFFbeLt3rDYytUnenO=s288-c-no" alt="foto de perfil">
+                        </div>
+                        <div class="col-10">
+                            <div class="col pensar">
+                                <p>Que estas pensando ?</p>
+                                <span><img src="./src/globe-central-south-asia.svg" alt="quien puede ver"> Cualquier persona puede responder</span>
+                            </div>
+                            <div class="row container-wgo">
+                                <div class="col d-flex wgo">
+                                    <div><img src="./src/image.svg" alt=""></div>
+                                    <div><img src="./src/filetype-gif.svg" alt=""></div>
+                                    <div><img src="./src/list-task.svg" alt=""></div>
+                                    <div><img src="./src/emoji-smile.svg" alt=""></div>
+                                    <div><img src="./src/stopwatch.svg" alt=""></div>
+                                    <div><img src="./src/geo-alt.svg" alt=""></div>
+                                </div>
+                                <div class="col wgo-btn">
+                                    <button type="button" class="btn btn-primary">Postear</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--CONTENIDO AQUI-->
+                    <div id="postsContainer" >
+                        
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 d-none d-md-block">
+                <div class="container-tendencias">
+                    <nav class="navbar">
+                        <input class="form-control rounded-pill buscador" type="search" placeholder="Search">
+                    </nav>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Obtener verificación</h5>
+                                        <p class="card-text">Suscríbete para desbloquear nuevas funciones.</p>
+                                        <a href="#" class="btn btn-primary rounded-pill">Obtener verificación</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card mt-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tendencias para ti</h5>
+                                        <div>
+                                            <div class="tendencias">
+                                                <div>
+                                                    <p class="text-muted small mb-0">Tendencias</p>
+                                                    <h6 class="mb-0 fw-bold">Karmaland</h6>
+                                                    <p class="text-muted small">2.842 post</p>
+                                                </div>
+                                                <div>
+                                                    <button type="button">...</button>
+                                                </div>
+                                            </div>
+                                            <div class="tendencias">
+                                                <div>
+                                                    <p class="text-muted small mb-0">Tendencias en Ecuador</p>
+                                                    <h6 class="mb-0 fw-bold">Uffff</h6>
+                                                    <p class="text-muted small">7.007 posts</p>
+                                                </div>
+                                                <div>
+                                                    <button type="button">...</button>
+                                                </div>
+                                            </div>
+                                            <div class="tendencias">
+                                                <div>
+                                                    <p class="text-muted small mb-0">Entretenimiento · Tendencia</p>
+                                                    <h6 class="mb-0 fw-bold">Karmaland</h6>
+                                                    <p class="text-muted small">2.842 posts</p>
+                                                </div>
+                                                <div>
+                                                    <button type="button">...</button>
+                                                </div>
+                                            </div>
+                                            <div class="tendencias">
+                                                <div>
+                                                    <p class="text-muted small mb-0">Entretenimiento · Tendencia</p>
+                                                    <h6 class="mb-0 fw-bold">Rubius</h6>
+                                                    <p class="text-muted small">2.141 posts</p>
+                                                </div>
+                                                <div>
+                                                    <button type="button">...</button>
+                                                </div>
+                                            </div>
+                                            <div class="tendencias">
+                                                <div>
+                                                    <p class="text-muted small mb-0">Politica · Tendencia</p>
+                                                    <h6 class="mb-0 fw-bold">Noboa</h6>
+                                                    <p class="text-muted small">116 mil posts</p>
+                                                </div>
+                                                <div>
+                                                    <button type="button">...</button>
+                                                </div>
+                                            </div>
+                                            <div class="tendencias">
+                                                <div>
+                                                    <p class="text-muted small mb-0">Tendencia en Ecuador</p>
+                                                    <h6 class="mb-0 fw-bold">Universidad</h6>
+                                                    <p class="text-muted small">31,6 mil posts</p>
+                                                </div>
+                                                <div>
+                                                    <button type="button">...</button>
+                                                </div>
+                                            </div>
+                                            <div class="tendencias">
+                                                <div>
+                                                    <p class="text-muted small mb-0">Tendencias</p>
+                                                    <h6 class="mb-0 fw-bold">McTrio</h6>
+                                                    <p class="text-muted small">10,2 mil posts</p>
+                                                </div>
+                                                <div>
+                                                    <button type="button">...</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./main.js"></script>
+    <script src="/src/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+</body>
+</html>

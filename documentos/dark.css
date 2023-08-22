@@ -1,0 +1,45 @@
+:root{
+    --background-color: #0000;
+}
+body{
+    color: #fff;
+}
+
+.option{
+    filter: invert(1);
+}
+.option-cat{
+    filter: invert(1);
+}
+.card-body{
+    background-color: #16181c;
+    color: #fff;
+}
+.hora,
+.arroba-user{
+    color: #707070 !important;
+}
+.pensar img{
+    filter: invert(1);
+}
+.container-wgo img{
+    filter: invert(1);
+}
+.container-statistics img{
+    filter: invert(1);
+}
+
+.buscador{
+    background-color: #202327;
+}
+.buscador::placeholder {
+    color: #fff;
+}
+.buscador:hover{
+    background-color: #26292c;
+    color: #fff;
+}
+
+.feed-inicio:hover{
+    background-color: #252525;
+}

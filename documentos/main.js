@@ -39,11 +39,11 @@ async function generarPosts() {
                     <img style="width: 300px;" class="img-fluid" src="${post.url}">
                 </div>
                 <div class="row-2 container-statistics">
-                    <div><img src="./src/chat.svg" alt="comentarios"> 269</div>
-                    <div><img src="./src/repeat.svg" alt="repost"> 865</div>
-                    <div><img src="./src/suit-heart.svg" alt="Me gusta"> 45,7 mil</div>
-                    <div><img src="./src/bar-chart-line.svg" alt="Ver"> 1,6 M</div>
-                    <div><img src="./src/upload.svg" alt="Compartir"> </div>
+                    <div><img src="/src/chat.svg" alt="comentarios"> 269</div>
+                    <div><img src="/src/repeat.svg" alt="repost"> 865</div>
+                    <div><img src="/src/suit-heart.svg" alt="Me gusta"> 45,7 mil</div>
+                    <div><img src="/src/bar-chart-line.svg" alt="Ver"> 1,6 M</div>
+                    <div><img src="/src/upload.svg" alt="Compartir"> </div>
                 </div>
             </div>
         </div>

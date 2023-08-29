@@ -7,3 +7,26 @@ body{
 .arroba-user{
     color: #1d1d1d;
 }
+
+.options:hover{
+    background-color: #cccccc;
+    border-radius: 20px;
+    height: 40px;
+}
+
+.feed-inicio:hover{
+    background-color: #f3f3f3;
+}
+
+.qpr:hover{
+    border-radius: 20px;
+    background-color:#f3f3f3;
+}
+.buscador:focus {
+    background-color: #eff1f1;
+    color: black;
+}
+.buscador:not(:focus) {
+    background-color: #eff1f1;
+    color: black;
+}

@@ -4,7 +4,13 @@
 body{
     color: #fff;
 }
-
+.qpr img{
+    filter: invert(1);
+}
+.qpr:hover{
+    border-radius: 20px;
+    background-color:#252525;
+}
 .option{
     filter: invert(1);
 }
@@ -28,18 +34,45 @@ body{
 .container-statistics img{
     filter: invert(1);
 }
+.card-body{
+    background-color: #252525 !important;
+}
+.card-body a{
+    background-color: #0b5ed7 !important;
+}
 
 .buscador{
     background-color: #202327;
+    color: #fff;
 }
 .buscador::placeholder {
     color: #fff;
 }
-.buscador:hover{
+.buscador:focus {
     background-color: #26292c;
     color: #fff;
 }
-
+.buscador:not(:focus) {
+    background-color: #202327;
+    color: #fff;
+}
 .feed-inicio:hover{
     background-color: #252525;
+}
+.options:hover{
+    background-color: #232426;
+    border-radius: 20px;
+    height: 40px;
+}
+.options-inicio,
+.options-guardado{
+    color: #fff;
+}
+
+#autoResizeTextarea{
+    background-color: transparent;
+    color: #fff;
+}
+#autoResizeTextarea::placeholder{
+    color: rgba(255, 255, 255, 0.6); /* Blanco opaco */
 }

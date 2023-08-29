@@ -27,25 +27,39 @@ body{
     margin-bottom: 35px;
     cursor: pointer;
 }
-.options:hover{
-    background-color: #232426;
-    border-radius: 20px;
-    height: 40px;
-}
 .options div span{
     padding-left: 10px;
 }
 /*Columna principal feed*/
+.feed{
+    cursor: pointer;
+}
 .container-feed{
     border-left: 1px solid gray;
     border-right: 1px solid gray;
 }
+/* Estilos para ocultar la barra de desplazamiento */
+.no-scrollbar {
+    overflow-y: hidden;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+/* Desactivar el estilo de enfoque en los elementos de formulario de Bootstrap */
+#autoResizeTextarea:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
 .pensar{
     padding-bottom: 8px;
     border-bottom: 1px solid gray;
+    margin-bottom: 10px;
 }
 .pensar span{
     padding-bottom: 20px;
+}
+.qpr{
+    padding: 6px;
 }
 .container-wgo{
     display: flex;
@@ -100,23 +114,24 @@ body{
     justify-content: space-between;
     padding-bottom: 10px;
 }
+.container-statistics div{
+    cursor: pointer;
+}
 
 
 /*Tercera columna Tendencias*/
-/*
-.card{
-    background-color: #16181c;
-    color: #fff;
-}*/
-
 .tendencias{
     display: flex;
     justify-content: space-between;
+}
+.card-body{
+    background-color: #eff1f1;
 }
 .card-body .tendencias > div > p{
     color: #666b70 !important;
 }
 .tendencias button{
+    color: #666b70;
     background: none;
     height: 20px;
     width: 20px;
@@ -124,7 +139,7 @@ body{
     border: none;
 }
 .tendencias button:hover {
-    background-color: rgba(65, 65, 86, 0.466);
+    background-color: rgba(167, 167, 167, 0.466);
 }
 
 /* Responsive */

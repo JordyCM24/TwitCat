@@ -113,17 +113,19 @@
                             <span class="qpr"><img src="./src/globe-central-south-asia.svg" alt="quien puede ver"> Cualquier persona puede responder</span>
                             <div class="row container-wgo">
                                 <div class="col d-flex wgo">
-                                    <div><img src="./src/image.svg" alt=""></div>
-                                    <div><img src="./src/filetype-gif.svg" alt=""></div>
-                                    <div><img src="./src/list-task.svg" alt=""></div>
-                                    <div><img src="./src/emoji-smile.svg" alt=""></div>
-                                    <div><img src="./src/stopwatch.svg" alt=""></div>
-                                    <div><img src="./src/geo-alt.svg" alt=""></div>
+                                    <div><img src="./src/image.svg" alt="Subir foto"></div>
+                                    <div><img src="./src/filetype-gif.svg" alt="Gif"></div>
+                                    <div><img src="./src/list-task.svg" alt="Encuesta"></div>
+                                    <div><img src="./src/emoji-smile.svg" alt="Emojis"></div>
+                                    <div><img src="./src/stopwatch.svg" alt="Tiempo"></div>
+                                    <div><img src="./src/geo-alt.svg" alt="Ubicacion"></div>
                                 </div>
-                                <div class="col wgo-btn">
-                                    <button type="button" class="btn btn-primary">Postear</button>
-                                </div>
-                                
+                                <form id="subeGatitoForm">
+                                    <div class="col wgo-btn">
+                                        <input type="file" id="file" name="file" accept="image/*">
+                                        <button type="button" onclick="subirFotoGatito();" class="btn btn-primary">Postear</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

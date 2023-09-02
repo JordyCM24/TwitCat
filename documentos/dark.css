@@ -62,7 +62,6 @@ body{
 .options:hover{
     background-color: #232426;
     border-radius: 20px;
-    height: 40px;
 }
 .options-inicio,
 .options-guardado{

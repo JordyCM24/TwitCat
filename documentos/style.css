@@ -25,6 +25,8 @@ body{
     justify-content: left;
     align-items: center;
     margin-bottom: 35px;
+    padding-left: 10px;
+    height: 40px;
     cursor: pointer;
 }
 .options div span{
@@ -66,13 +68,12 @@ body{
 }
 .wgo-btn{
     display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
 }
 .wgo-btn button{
     border-radius: 20px;
-    height: 30px;
+    height: 35px;
     text-align: center;
     font-weight: bold;
     font-size: 12px;

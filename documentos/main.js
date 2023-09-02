@@ -1,12 +1,13 @@
-const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=3&breed_ids=beng&api_key=live_nwsApJ3OEyQYFoawz6kLo5nywRWPi3SpDzAosM1gM0FSPGJuAMmHuFuhXHZYNeni';
+const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_nwsApJ3OEyQYFoawz6kLo5nywRWPi3SpDzAosM1gM0FSPGJuAMmHuFuhXHZYNeni';
 const API_KEY_FAVORITES = 'https://api.thecatapi.com/v1/favourites?limit=40';
 const API_KEY_FAVORITES_DELETE =(id) => `https://api.thecatapi.com/v1/favourites/${id}?limit=40`;
+const API_URL_UPLOAD = 'https://api.thecatapi.com/v1/images/upload';
 const spanError = document.getElementById('error');
 const posts = document.getElementsByClassName('posteos');
 const img1 = document.getElementById('img1');
 
 
-async function generarPosts() {
+async function generarPosts(id) {
     const response = await fetch(API_URL_RANDOM);
     const data = await response.json();
     console.log('gatos aleatorios');
@@ -49,18 +50,22 @@ async function generarPosts() {
             </div>
         </div>
         `;
+        
         postsContainer.innerHTML += postHTML;
         console.log("id",post.id);
+
+        
+    
     });
 }
 
-
+/*
 //cargar gatos favoritos
 async function cargarGatosFavoritos() {
     const res = await fetch(API_KEY_FAVORITES, { //fecht por defecto usa metodo get
         method: 'GET',
         headers: {
-            'x-api-key': 'live_7FRL9HsULdTLTNfcdUTkH8WgTsHfOJPNoMziJMAcao5d9hLmIoRlmeVgdkHHflOV',
+            'x-api-key': 'live_nwsApJ3OEyQYFoawz6kLo5nywRWPi3SpDzAosM1gM0FSPGJuAMmHuFuhXHZYNeni',
         },
     });
 
@@ -92,7 +97,68 @@ async function cargarGatosFavoritos() {
             console.log("gato.id",gato.id);
         });
     }
+}*/
+
+// Cargar gatos favoritos
+async function cargarGatosFavoritos() {
+    const res = await fetch(API_KEY_FAVORITES, {
+        method: 'GET',
+        headers: {
+            'x-api-key': 'live_nwsApJ3OEyQYFoawz6kLo5nywRWPi3SpDzAosM1gM0FSPGJuAMmHuFuhXHZYNeni',
+        },
+    });
+
+    const data = await res.json();
+
+    if (res.status !== 200) {
+        spanError.innerHTML = "Hubo un error: " + res.status + data.message;
+    } else {
+        const section = document.getElementById('gatosFavoritos');
+        section.innerHTML = ""; // Limpiar el contenido existente
+
+        const h2 = document.createElement('h2');
+        h2.textContent = 'Gatos favoritos';
+        section.appendChild(h2);
+
+        data.forEach(gato => {
+            // Crear una estructura similar a la de las publicaciones
+            const postHTML = `
+                <div class="row posteos">
+                    <div class="col mt-2 p-0">
+                        <div class="container-img-user">
+                            <img class="img-fluid img-user" src="${gato.image.url}" alt="foto de perfil">
+                        </div>
+                    </div>
+                    <div class="col-11 mt-2 ">
+                        <div class="row-1">
+                            <div class="name-user">
+                                <p class="fw-bold">${gato.image.id}</p>
+                                <span class="text-muted arroba-user"> @${gato.image.id} </span>
+                                ·
+                                <p class="text-muted hora">16h</p>
+                            </div>
+                        </div>
+                        <div class="row posteos-img">
+                            <img style="width: 300px;" class="img-fluid" src="${gato.image.url}">
+                        </div>
+                        <div class="row-2 container-statistics">
+                            <div><img src="./src/chat.svg" alt="comentarios"> 269</div>
+                            <div><img src="./src/repeat.svg" alt="repost"> 865</div>
+                            <div><img src="./src/suit-heart.svg" alt="Me gusta"> 45,7 mil</div>
+                            <div><img src="./src/bar-chart-line.svg" alt="Ver"> 1,6 M</div>
+                            <div><img src="./src/save2.svg" alt="Guardar" onclick="eliminarGatitosFavorito('${gato.id}')"></div>
+                            <div><img src="./src/upload.svg" alt="Compartir"> </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Agregar la estructura al contenedor de gatos favoritos
+            section.innerHTML += postHTML;
+        });
+    }
 }
+
 
 async function guardarGatitosFavoritos(id){
     console.log("guardar id", id);
@@ -113,6 +179,7 @@ async function guardarGatitosFavoritos(id){
             spanError.innerHTML= "Hubo un error: "+res.status;
         }else{
             console.log('Guardado');
+            window.alert('Gurdado en Guardado');
             cargarGatosFavoritos();
         }
         console.log(res);
@@ -138,6 +205,30 @@ async function eliminarGatitosFavorito(id) {
         console.log('Eliminado');
         cargarGatosFavoritos();
     }
+}
+
+//subir foto 
+async function subirFotoGatito(){
+    window.alert('Espere 3 segundos y se guarda en la seccion Guardados');
+    const form = document.getElementById('subeGatitoForm');
+    const formData = new FormData(form);
+    console.log(formData.get('file'));
+    const res = await fetch(API_URL_UPLOAD,
+        {
+            method: 'POST',
+            headers: {
+                'x-api-key': 'live_nwsApJ3OEyQYFoawz6kLo5nywRWPi3SpDzAosM1gM0FSPGJuAMmHuFuhXHZYNeni',
+            },
+            body: formData,
+        });
+    const data = await res.json();
+    if(res.status !== 201){
+        spanError.textContent = `Hubo un error: ${res.status}`;
+        console.log({ data });
+    } else {
+        console.log('Foto de gatito cargada');
+        guardarGatitosFavoritos(data.id);
+    } 
 }
 
 generarPosts();
